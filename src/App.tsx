@@ -4,13 +4,14 @@ import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
 // aws-exportsファイルをインポートし、Amplifyを設定
+// @ts-ignore
 import awsExports from './aws-exports.js';
 Amplify.configure(awsExports);
 
 // アプリのスタイルをインポート
 import './App.css';
 
-function App({ user, signOut }: { user: any, signOut: () => void }) {
+function App({ user, signOut }: { user?: any, signOut?: () => void }) {
     return (
         <>
             {user ? (
